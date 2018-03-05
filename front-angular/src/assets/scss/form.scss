@@ -1,0 +1,36 @@
+form.json-schema-form {
+
+  root-widget {
+    display: block;
+
+    & > div {
+      clear: both;
+       margin-bottom: 15px;
+
+       .form-group {
+
+         & > label {
+           width: 25%;
+           float: left;
+           font-weight: bold;
+           text-align: right;
+           padding-top:5px;
+           margin-bottom: 15px;
+         }
+
+         & > div, & > p {
+           width: 70%;
+           float: right;
+         }
+
+         input[type="submit"] {
+           width: auto;
+           float: right;
+           margin: 15px 0 15px 15px;
+         }
+       }
+     }
+
+  }
+
+}

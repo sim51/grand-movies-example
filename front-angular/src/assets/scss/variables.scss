@@ -1,0 +1,11 @@
+// Override bootstrap vatriables
+$primary: #2164a3;
+$secondary: #6c757d;
+$white:    #fff;
+$black:    #000;
+
+// customer variables
+$navbar-height: 80px;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";

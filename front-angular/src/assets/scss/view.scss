@@ -1,0 +1,46 @@
+.display-object {
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .display-object-row {
+    clear:both;
+    display: inline-block;
+    width: 100%;
+
+    &.inline {
+      display: inline;
+    }
+
+    .display-object-label {
+      width: 25%;
+      float: left;
+      font-weight: bold;
+      text-align: right;
+      text-transform: capitalize;
+    }
+
+    .display-object-value {
+      width: 70%;
+      float: right;
+    }
+
+  }
+
+}
+
+.truncate {
+  width:100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    white-space: normal;
+    text-overflow: unset;
+  }
+
+}
+
+.table { display: block;}

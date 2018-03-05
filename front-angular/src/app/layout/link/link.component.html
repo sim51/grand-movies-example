@@ -1,0 +1,15 @@
+<a *ngIf="route.data.expand == null || !route.data.expand"
+   class="nav-link"
+   href="#"
+   title={{route.data.title}}
+   routerLink={{currentPath}}
+   routerLinkActive="active">
+  {{route.data.name}}
+</a>
+
+<a *ngIf="route.data.expand"
+   class="nav-link dropdown-toggle">
+   {{route.data.name}}
+</a>
+
+<layout-menu *ngIf="currentPath" [path]="currentPath" [routes]="route.children"></layout-menu>

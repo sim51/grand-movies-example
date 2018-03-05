@@ -1,0 +1,153 @@
+body {
+  background-color: $gray-200;
+
+  a {
+    color: $link-color !important;
+    text-decoration: $link-decoration !important;
+    cursor:pointer;
+
+    @include hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+  }
+
+  div#app-wrapper {
+
+    header {
+      background-color: $white;
+
+      nav {
+        background-color: $white;
+        box-shadow: 0px 5px 5px $primary;
+        max-height: $navbar-height;
+
+        a.navbar-brand {
+          img {
+            max-height: $navbar-height;
+            padding: 5px;
+          }
+        }
+
+        .navbar-toggler {
+          background-color: $primary;
+        }
+
+        ul.navbar-nav {
+          > li{
+            background-color: $white;
+            height: $navbar-height;
+            line-height: $navbar-height;
+
+            a{
+              padding-top:0;
+              padding-bottom:0;
+            }
+
+            ul {
+              display: none;
+              height: 0;
+              transition: display 5s;
+              background-color: $white;
+              padding: 5px 5px 0 5px;
+            }
+          }
+          > li:hover{
+            background-color: $primary;
+            a {
+              color: $white !important;
+            }
+
+            ul {
+              display: block;
+              position: fixed;
+              top: $navbar-height;
+              margin-left: -5px;
+              height: auto;
+
+              li {
+                background-color: $gray-200;
+                height: auto;
+                line-height: normal;
+                padding: 10px;
+                margin-bottom: 5px;
+
+                a {
+                  color: $primary !important;
+                }
+              }
+
+              li:hover {
+                background-color: $primary;
+                a {
+                  color: $white !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    nav.breadcrumb {
+      position: fixed;
+      top: 80px;
+      margin: 0;
+      padding: 0;
+      z-index: 999;
+
+      ol {
+        margin: 0;
+        padding:0 15px;
+        background-color: $primary;
+
+        a {
+          color:$white !important;
+        }
+      }
+
+    }
+
+    main {
+      margin: 120px 5% 15px 5%;
+      width: 90%;
+
+      div.page{
+
+        div.page-block {
+          width:100%;
+          margin: 0;
+          margin-bottom: 20px;
+          background-color: $white;
+          padding: 15px;
+
+          box-shadow: 0 0.25rem 0.75rem rgba($black, 0.10);
+          border-radius: .25rem;
+        }
+
+        h1 {
+          margin: 10px 0;
+
+          p {
+            font-size: 40%;
+          }
+        }
+
+      }
+
+    }
+
+    footer {
+      position:fixed;
+      bottom:0;
+      background: rgba($white, 0.8);
+
+      p {
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+}
