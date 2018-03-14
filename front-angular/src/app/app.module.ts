@@ -15,6 +15,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { RoutingModule } from './routing/routing.module';
+import { MovieModule } from './movie/movie.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { RoutingModule } from './routing/routing.module';
     RoutingModule,
     HttpClientModule,
     ApolloModule,
-    HttpLinkModule
+    HttpLinkModule,
+    MovieModule
   ],
   providers: [],
   bootstrap: [AppComponent]

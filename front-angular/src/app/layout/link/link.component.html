@@ -12,4 +12,4 @@
    {{route.data.name}}
 </a>
 
-<layout-menu *ngIf="currentPath" [path]="currentPath" [routes]="route.children"></layout-menu>
+<layout-menu *ngIf="route.data.expand" [path]="currentPath" [routes]="route.children"></layout-menu>

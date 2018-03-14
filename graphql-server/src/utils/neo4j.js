@@ -61,5 +61,6 @@ export const run = async ( session, query, params, mapping ) => {
  * @return {object} Return the projection of the record.
  */
 export const mappingNodeN = ( record ) => {
+  console.log( record );
   return record.get( "n" ).properties;
 }

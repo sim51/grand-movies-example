@@ -1,8 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// Movie
+import { MovieSearchComponent } from 'app/movie/search/search.component';
+import { MovieViewComponent } from 'app/movie/view/view.component';
+
 export const routes: Routes = [
-  { path: '*', redirectTo: '/' }
+  { path: '*', redirectTo: '/' },
+  { path: '', pathMatch: 'full', redirectTo: '/movie/search' },
+  // Movie
+  { path: 'movie', data: { menu: true, expand: false, name: 'Movie' },
+    children: [
+      { path: '', redirectTo: 'search', pathMatch: 'full' },
+      { path: 'search', component: MovieSearchComponent, data: { menu: false, name: 'Search' } },
+      { path: ':id/:title', component: MovieViewComponent, data: { menu: false, name: ':title' } },
+    ]
+  },
 ];
 
 @NgModule({
