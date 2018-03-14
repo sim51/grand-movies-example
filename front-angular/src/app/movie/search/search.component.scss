@@ -1,0 +1,10 @@
+.movies-result {
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+
+  .movies-result-item {
+    display: inline-flex;
+    cursor: pointer;
+  }
+}

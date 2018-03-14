@@ -1,0 +1,80 @@
+<div *ngIf="movie" class="page">
+
+  <page-title [title]="movie.title" [actions]="[]"></page-title>
+
+  <div class="row page-block">
+
+    <div class="col-4">
+      <img src={{movie.poster}} />
+    </div>
+
+    <div class="col-8">
+
+      <div class="display-object-row">
+        <span>
+          <label class="display-object-label"> Title</label>
+          <span class="display-object-value"> {{movie.title}} </span>
+        </span>
+      </div>
+
+      <div class="display-object-row">
+        <span>
+          <label class="display-object-label">Description</label>
+          <span class="display-object-value"> {{movie.plot}} </span>
+        </span>
+      </div>
+
+      <div class="display-object-row">
+        <span>
+          <label class="display-object-label">Date</label>
+          <span class="display-object-value"> {{movie.released | date}} </span>
+        </span>
+      </div>
+
+      <div class="display-object-row">
+        <span>
+          <label class="display-object-label">Directors</label>
+          <span class="display-object-value">
+            <span *ngFor="let director of movie.directors">
+              {{director.name}}
+            </span>
+          </span>
+        </span>
+      </div>
+
+
+      <div class="display-object-row">
+        <span>
+          <label class="display-object-label">Actors</label>
+          <span class="display-object-value">
+            <span *ngFor="let actor of movie.actors">
+              {{actor.name}}
+            </span>
+          </span>
+        </span>
+      </div>
+
+      <div class="display-object-row">
+        <span>
+          <label class="display-object-label">Genres</label>
+          <span class="display-object-value">
+            <span *ngFor="let genre of movie.genres">
+              {{genre.name}}
+            </span>
+          </span>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="movie.recommendations" class="row page-block recommendations">
+    <h3>Recommendations</h3>
+    <div class=movie-reco>
+      <div class="movie-reco-item" *ngFor="let film of movie.recommendations">
+        <movie-view-card [movie]="film"></movie-view-card>
+      </div>
+    </div>
+  </div>
+
+</div>

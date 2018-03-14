@@ -1,0 +1,30 @@
+.movie-reco {
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+
+  .movie-reco-item {
+    display: inline-flex;
+    cursor: pointer;
+  }
+}
+
+.display-object-row {
+  clear:both;
+  padding-top: 15px;
+
+  .display-object-label {
+    width: 20%;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: block;
+    float: left;
+  }
+
+  .display-object-value {
+    width: 70%;
+    display: block;
+    float: left;
+  }
+
+}

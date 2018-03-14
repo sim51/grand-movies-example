@@ -1,0 +1,11 @@
+<div *ngIf="movie"
+      class="movie-card"
+      (click)="onClick()">
+
+  <div class="header">
+    {{movie.title}} - {{movie.imdbRating}}
+  </div>
+
+  <img src={{movie.poster}} />
+
+</div>
