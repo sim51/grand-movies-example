@@ -11,7 +11,7 @@ export default `
     genres: [Genre] @relation(name: "IN_GENRE", direction:"OUT")
     directors: [Director] @relation(name: "DIRECTED", direction:"IN")
     actors: [Actor] @relation(name: "ACTED_IN", direction:"IN")
-    recommendations: [Movie]
+    recommendations(skip: Int = 0, limit: Int = 10): [Movie]
   }
 
   type Query {

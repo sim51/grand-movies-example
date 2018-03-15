@@ -48,7 +48,6 @@ export const checkEnvForConfiguration = () => {
  * @return {array} The query's result with the given projection
  */
 export const run = async ( session, query, params, mapping ) => {
-  console.log( "Query is \n" + query + " \n with params \n" + JSON.stringify( params ) );
   let result = await session.run( query, params );
   return result.records.map( mapping );
 }
@@ -61,6 +60,5 @@ export const run = async ( session, query, params, mapping ) => {
  * @return {object} Return the projection of the record.
  */
 export const mappingNodeN = ( record ) => {
-  console.log( record );
   return record.get( "n" ).properties;
 }

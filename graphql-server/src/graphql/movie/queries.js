@@ -24,5 +24,6 @@ export const RECO = `
   WITH n, genreOverlap, COUNT(*) AS userRatedScore
   RETURN n
   ORDER BY (0.9 * genreOverlap) + (0.1 * userRatedScore)  DESC
-  LIMIT 5
+  SKIP $skip
+  LIMIT $limit
 `.replace( /\n/g, ' ' );

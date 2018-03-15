@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { environment } from 'environments/environment';
 import { Apollo } from 'apollo-angular';
 import { QUERY_GET } from './get.graphql';
+import { getQuery, getQueryVariables } from './get.graphql.type';
 
 @Component({
   selector: 'app-view',
@@ -12,7 +13,7 @@ import { QUERY_GET } from './get.graphql';
 export class MovieViewComponent implements OnInit {
 
   // The movie
-  movie:any;
+  movie :getQuery["movie"];
 
   /**
    * Default constructor.
@@ -29,15 +30,14 @@ export class MovieViewComponent implements OnInit {
     });
   }
 
-  fetch(id :number) {
+
+  fetch(id :string) {
     this.apollo
-        .watchQuery( { query: QUERY_GET, variables: { id: id } })
+        .watchQuery<getQuery, getQueryVariables>( { query: QUERY_GET, variables: { id: id } })
         .valueChanges
         .subscribe( ({ data, loading }) => {
-          this.loading = loading;
-          this.movie = data.movie;
-      }
-    );
+            this.movie = data.movie;
+        });
   }
 
 }

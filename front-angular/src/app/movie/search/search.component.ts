@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { environment } from 'environments/environment';
-import { Apollo } from 'apollo-angular';
+import { Apollo, QueryRef } from 'apollo-angular';
 import { QUERY_SEARCH } from './search.graphql';
+import { searchQuery, searchQueryVariables } from './search.graphql.type';
 
 @Component({
   selector: 'movie-search',
@@ -14,11 +15,11 @@ export class MovieSearchComponent implements OnInit {
   // search fields
   search :string = '';
   limit :number = 20;
-  offset :number = 0;
+  skip :number = 0;
   // GraphQL query
-  query :any;
+  query :QueryRef<searchQuery, searchQueryVariables>;
   // Graphql result
-  movies :[any];
+  movies :searchQuery["movies"];
   loading :boolean = false;
   hasMore :boolean = true;
 
@@ -41,9 +42,9 @@ export class MovieSearchComponent implements OnInit {
       if(Object.keys(params).length > 0) {
         this.search = params.search || '';
         this.limit = params.limit || 20;
-        this.offset = params.offset || 0;
-        this.fetch();
+        this.skip = params.skip || 0;
       }
+      this.fetch();
     });
   }
 
@@ -56,13 +57,13 @@ export class MovieSearchComponent implements OnInit {
    * Perform the graphQl query and load the data into the component
    */
   fetch() {
-    this.query = this.apollo.watchQuery(
+    this.query = this.apollo.watchQuery<searchQuery, searchQueryVariables>(
       {
         query: QUERY_SEARCH,
         variables: {
           search: this.search,
           limit: this.limit,
-          offset: this.offset,
+          skip: this.skip,
         }
       }
     );
@@ -82,13 +83,13 @@ export class MovieSearchComponent implements OnInit {
   }
 
   fetchMore(){
-    this.offset = this.offset + this.limit;
+    this.skip = this.skip + this.limit;
     this.query.fetchMore(
       {
         variables: {
           searchText: this.search,
           limit: this.limit,
-          offset: this.offset
+          skip: this.skip
         },
 
         // We are able to figure out which offset to use because it matches
@@ -98,7 +99,7 @@ export class MovieSearchComponent implements OnInit {
           if (fetchMoreResult.movies.length == 0) {
             this.hasMore = false;
           }
-          return Object.assign({}, prev, { claims: [...prev.movies, ...fetchMoreResult.movies] });
+          return Object.assign({}, prev, { movies: [...prev.movies, ...fetchMoreResult.movies] });
         },
       }
     );

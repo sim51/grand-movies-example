@@ -9,8 +9,8 @@ export default {
 
   Movie: {
 
-    recommendations: async ( current, _, context ) => {
-      let result = await Neo4j.run( context.driver.session(), queries.RECO, current, Neo4j.mappingNodeN );
+    recommendations: async ( current, params, context ) => {
+      let result = await Neo4j.run( context.driver.session(), queries.RECO, Object.assign( {}, params, { movieId: current.movieId } ), Neo4j.mappingNodeN );
       return result;
     }
 
@@ -24,7 +24,6 @@ export default {
         movie.genres = record.get( "genres" ).map( ( item ) => { return item.properties } )
         movie.actors = record.get( "actors" ).map( ( item ) => { return item.properties } )
         movie.directors = record.get( "directors" ).map( ( item ) => { return item.properties } )
-        console.log( movie );
         return movie;
       }
       let result = await Neo4j.run( context.driver.session(), queries.GET, params, mappingFunction );

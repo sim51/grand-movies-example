@@ -2,10 +2,14 @@
       class="movie-card"
       (click)="onClick()">
 
-  <div class="header">
-    {{movie.title}} - {{movie.imdbRating}}
+  <div class="rating">
+    {{movie.imdbRating}}
   </div>
-
   <img src={{movie.poster}} />
+
+  <div class="flop">
+    <h4>{{movie.title}}</h4>
+    <span>{{movie.plot}}</span>
+  </div>
 
 </div>

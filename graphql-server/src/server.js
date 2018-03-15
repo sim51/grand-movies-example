@@ -63,35 +63,7 @@ server.use(
   '/graphiql',
   graphiqlExpress( {
     endpointURL: '/graphql',
-    query: `query($id:ID!) {
-  Movie(movieId:$id) {
-    movieId
-    title
-    year
-    plot
-    poster
-    imdbRating
-    genres{
-      name
-    }
-    directors {
-      name
-    }
-    actors {
-      name
-    }
-		similarByUser {
-      movieId
-      title
-      poster
-    }
-    similarByGenre {
-      movieId
-      title
-      poster
-    }
-  }
-}`,
+    query: ``,
   } )
 );
 
