@@ -8,7 +8,7 @@ import { Route } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  @Input() routes: Array<Route>;
+  @Input() routes: Array<Route> = [];
   @Input() path: string;
   menu: Array<Route> = [];
 

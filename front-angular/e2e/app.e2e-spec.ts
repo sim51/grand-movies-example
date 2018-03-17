@@ -1,15 +1,15 @@
 import { AppPage } from './app.po';
 
-describe('atoms-qapp App', () => {
+describe('App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display home page', () => {
     page.navigateTo();
-    expect(page.getParagraphText())
-      .toEqual('Welcome to app!');
+    expect(page.getPageTitle())
+      .toEqual('Movies');
   });
 });

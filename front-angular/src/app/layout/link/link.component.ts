@@ -9,7 +9,7 @@ import { Route } from '@angular/router';
 export class LinkComponent implements OnInit {
 
   @Input() route: Route;
-  @Input() path: string;
+  @Input() path: string = '';
   currentPath: string;
 
   constructor() {
@@ -17,7 +17,9 @@ export class LinkComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentPath = `${this.path}/${this.route.path}`;
+    if (this.route) {
+      this.currentPath = `${this.path}/${this.route.path}`;
+    }
   }
 
 }

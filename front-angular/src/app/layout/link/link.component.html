@@ -1,18 +1,18 @@
-<a *ngIf="route.data.expand == null || !route.data.expand"
+<a *ngIf="route?.data?.expand == null || !route?.data?.expand"
    class="nav-link"
    href="#"
-   title={{route.data.title}}
-   routerLink={{currentPath}}
+   title="{{ route?.data?.title }}"
+   routerLink="{{ currentPath }}"
    routerLinkActive="active">
-  {{ route.data.name }}
+  {{ route?.data?.name }}
 </a>
 
-<a *ngIf="route.data.expand"
+<a *ngIf="route?.data?.expand"
    class="nav-link dropdown-toggle">
-   {{ route.data.name }}
+   {{ route?.data?.name }}
 </a>
 
-<grand-layout-menu *ngIf="route.data.expand"
-                 [path]="currentPath"
-                [routes]="route.children">
+<grand-layout-menu *ngIf="route?.data?.expand"
+                   [path]="currentPath"
+                   [routes]="route?.children">
 </grand-layout-menu>

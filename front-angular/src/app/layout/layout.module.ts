@@ -13,8 +13,6 @@ import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, MenuComponent, LinkComponent, BreadcrumbComponent, MainComponent],
   imports: [BrowserModule, RoutingModule],
-  exports: [HeaderComponent, FooterComponent, MenuComponent, BreadcrumbComponent, MainComponent],
-  providers: [],
-  bootstrap: []
+  exports: [HeaderComponent, FooterComponent, MenuComponent, BreadcrumbComponent, MainComponent]
 })
 export class LayoutModule { }

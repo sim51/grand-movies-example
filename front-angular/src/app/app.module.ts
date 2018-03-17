@@ -30,10 +30,8 @@ import { environment } from './../environments/environment';
 
 export class AppModule {
 
-  constructor(apollo: Apollo, httpLink: HttpLink) {
+  constructor(apollo: Apollo) {
     apollo.create({
-      // By default, this client will send queries to the
-      // `/graphql` endpoint on the same host
       link: createUploadLink({ uri: environment.graphqlUrl }),
       cache: new InMemoryCache()
     });
