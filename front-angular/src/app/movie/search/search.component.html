@@ -2,7 +2,8 @@
 
   <div class="row d-flex align-items-center page-block">
     <div class="col-8">
-      <h1 class="h2">
+      <h1 class="h2"
+          i18n="Movies page search title@@movie.search.title">
         Movies
       </h1>
     </div>
@@ -10,15 +11,25 @@
     <div class="col-4">
       <div class="float-right input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Search</span>
+          <span class="input-group-text"
+                i18n="Search word@@search">
+
+            Search
+          </span>
         </div>
-        <input type="text" class="form-control" placeholder="by name..." [(ngModel)]="search" (keyup.enter)="doSearch()">
+        <input type="text"
+               class="form-control"
+               placeholder="by name..."
+               [(ngModel)]="search"
+               (keyup.enter)="doSearch()">
       </div>
     </div>
 
   </div>
 
-  <div class="row page-block" *ngIf="movies != null">
+  <div *ngIf="movies != null"
+       class="row page-block">
+
     <div class="col-12 movies-result"
          *ngIf="movies != null"
          infiniteScroll
@@ -26,12 +37,20 @@
          [infiniteScrollThrottle]="50"
          (scrolled)="fetchMore()">
 
-         <div *ngFor="let movie of movies" class="movies-result-item">
-           <movie-view-card [movie]="movie"></movie-view-card>
+         <div *ngFor="let movie of movies; trackBy: movie?.movieId"
+              class="movies-result-item">
+           <grand-movie-view-card [movie]="movie"></grand-movie-view-card>
          </div>
 
-      <p *ngIf="hasMore" class="text-center"><a (click)="fetchMore()"> Load more </a></p>
+      <p *ngIf="hasMore"
+         class="text-center">
+         <a (click)="fetchMore()" i18n="Load more link for pagination@@pagination.loadmore">
+           Load more
+         </a>
+      </p>
+
     </div>
+
   </div>
 
 </div>

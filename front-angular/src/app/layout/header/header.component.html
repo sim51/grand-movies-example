@@ -3,17 +3,29 @@
   <nav class="navbar navbar-expand-md fixed-top">
 
     <!-- Brand / application home link -->
-    <a class="navbar-brand" href="/">
-      <img src={{logo}} alt={{brand}} />
+    <a class="navbar-brand"
+       href="/">
+      <img src="{{ logo }}" alt="{{ brand }}" />
     </a>
 
     <!-- Responsive burger button -->
-    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-dark"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsDefault"
+            aria-controls="navbarsDefault"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
+
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsDefault">
-      <layout-menu [path]="''" [routes]="routes"></layout-menu>
+    <div id="navbarsDefault"
+         class="collapse navbar-collapse" >
+      <grand-layout-menu [path]="''"
+                       [routes]="routes">
+      </grand-layout-menu>
     </div>
   </nav>
 

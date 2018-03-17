@@ -1,22 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Route } from '@angular/router';
 
 @Component({
-  selector: 'menu-link',
+  selector: 'grand-menu-link',
   templateUrl: './link.component.html',
   styleUrls: ['./link.component.scss']
 })
 export class LinkComponent implements OnInit {
 
-  @Input() route :Route;
-  @Input() path :string;
-  currentPath :string;
+  @Input() route: Route;
+  @Input() path: string;
+  currentPath: string;
 
   constructor() {
+    // Nothing
   }
 
-  ngOnInit() {
-    this.currentPath = this.path + '/' + this.route.path;
+  ngOnInit(): void {
+    this.currentPath = `${this.path}/${this.route.path}`;
   }
 
 }

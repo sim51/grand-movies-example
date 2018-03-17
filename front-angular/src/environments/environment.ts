@@ -7,12 +7,12 @@ export const environment = {
   production: false,
 
   // Layout
-  logo:'assets/images/logo.png',
-  brand:'Neo4j',
-  year:'2018',
+  logo: 'assets/images/logo.png',
+  brand: 'Neo4j',
+  year: '2018',
 
   // Graphql
-  graphqlUrl:'http://localhost:3000/graphql',
-  remoteAssetsUrl:'http://localhost:3000/'
+  graphqlUrl: 'http://localhost:3000/graphql',
+  remoteAssetsUrl: 'http://localhost:3000/'
 
 };

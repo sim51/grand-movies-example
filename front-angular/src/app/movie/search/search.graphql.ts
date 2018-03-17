@@ -8,8 +8,5 @@ export const QUERY_SEARCH = gql`query search($search :String = "", $skip :Int = 
     plot
     poster
     imdbRating
-    genres {
-      name
-    }
   }
 }`;

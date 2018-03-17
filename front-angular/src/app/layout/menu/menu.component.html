@@ -1,5 +1,8 @@
 <ul class="navbar-nav">
-  <li class="nav-item" *ngFor="let link of menu">
-    <menu-link [path]="path" [route]="link"></menu-link>
+  <li *ngFor="let link of menu; trackBy:link?.name"
+      class="nav-item">
+    <grand-menu-link [path]="path"
+                   [route]="link">
+    </grand-menu-link>
   </li>
 </ul>

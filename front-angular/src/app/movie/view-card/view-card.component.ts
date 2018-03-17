@@ -1,19 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'movie-view-card',
+  selector: 'grand-movie-view-card',
   templateUrl: './view-card.component.html',
   styleUrls: ['./view-card.component.scss']
 })
 export class MovieViewCardComponent {
 
-  @Input() movie:any;
+  // TODO: add the movie type
+  @Input() movie: any;
 
   constructor(private router: Router) {
+    // Nothing
   }
 
-  onClick() {
+  onClick(): void {
     this.router.navigate(['/movie', this.movie.movieId, this.movie.title]);
   }
 

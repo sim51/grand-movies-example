@@ -6,28 +6,28 @@ export interface getQueryVariables {
 };
 
 export interface getQuery {
-  movie:  {
+  movie: {
     movieId: string,
     title: string | null,
     released: string | null,
     plot: string | null,
     poster: string | null,
     imdbRating: number | null,
-    genres:  Array< {
+    genres: Array<{
       name: string,
-    } | null > | null,
-    actors:  Array< {
+    } | null> | null,
+    actors: Array<{
       name: string,
-    } | null > | null,
-    directors:  Array< {
+    } | null> | null,
+    directors: Array<{
       name: string,
-    } | null > | null,
-    recommendations:  Array< {
+    } | null> | null,
+    recommendations: Array<{
       movieId: string,
       title: string | null,
       poster: string | null,
       imdbRating: number | null,
       plot: string | null,
-    } | null > | null,
+    } | null> | null,
   } | null,
 };

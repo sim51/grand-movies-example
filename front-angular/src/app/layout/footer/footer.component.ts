@@ -1,18 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from 'environments/environment';
+import { Component } from '@angular/core';
+import { environment } from './../../../environments/environment';
 
 @Component({
-  selector: 'layout-footer',
-  templateUrl: './footer.component.html',
+  selector: 'grand-layout-footer',
+  templateUrl: './footer.component.html'
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
 
-  brand=environment.brand;
-  year=environment.year;
+  brand: string = environment.brand;
+  year: string = environment.year;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    // Nothing
   }
 
 }

@@ -1,15 +1,16 @@
 <div *ngIf="movie"
-      class="movie-card"
-      (click)="onClick()">
+     class="movie-card"
+     (click)="onClick()">
 
   <div class="rating">
-    {{movie.imdbRating}}
+    {{ movie.imdbRating }}
   </div>
-  <img src={{movie.poster}} />
+
+  <img src="{{ movie.poster }}" />
 
   <div class="flop">
-    <h4>{{movie.title}}</h4>
-    <span>{{movie.plot}}</span>
+    <h4>{{ movie.title }}</h4>
+    <span>{{ movie.plot }}</span>
   </div>
 
 </div>

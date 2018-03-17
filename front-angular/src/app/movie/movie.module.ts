@@ -5,9 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule } from '@angular/forms';
 // Application modules
-import { RoutingModule } from 'app/routing/routing.module';
-import { LayoutModule } from 'app/layout/layout.module';
-import { SharedModule } from 'app/shared/shared.module';
+import { RoutingModule } from './../routing/routing.module';
+import { LayoutModule } from './../layout/layout.module';
+import { SharedModule } from './../shared/shared.module';
 // Module components
 import { MovieSearchComponent } from './search/search.component';
 import { MovieViewComponent } from './view/view.component';
@@ -22,8 +22,8 @@ import { MovieViewCardComponent } from './view-card/view-card.component';
     FormsModule,
     RoutingModule,
     LayoutModule,
-    SharedModule,
+    SharedModule
   ],
-  declarations: [ MovieSearchComponent, MovieViewComponent,  MovieViewCardComponent ]
+  declarations: [MovieSearchComponent, MovieViewComponent, MovieViewCardComponent]
 })
 export class MovieModule { }

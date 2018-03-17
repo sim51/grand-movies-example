@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from 'environments/environment';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'layout-main',
+  selector: 'grand-layout-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    // Nothing
   }
 
 }
